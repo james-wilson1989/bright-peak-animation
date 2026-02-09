@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Six Sects Siege of Bright Peak</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle, #111 40%, #000 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .scene {
+      position: relative;
+      width: 400px;
+      height: 400px;
+    }
+
+    /* 光明顶 */
+    .peak {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, #ffcc00, #ff6600);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 30px rgba(255, 180, 0, 0.8);
+      z-index: 10;
+    }
+
+    /* 门派通用样式 */
+    .sect {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      opacity: 0.9;
+      animation: attack 2.5s infinite ease-in-out;
+    }
+
+    /* 六大门派颜色 + 方向 */
+    .sect1 { background: #ff4444; top: 0; left: 175px; animation-delay: 0s; }
+    .sect2 { background: #44ccff; bottom: 0; left: 175px; animation-delay: .3s; }
+    .sect3 { background: #44ff88; left: 0; top: 175px; animation-delay: .6s; }
+    .sect4 { background: #aa66ff; right: 0; top: 175px; animation-delay: .9s; }
+    .sect5 { background: #ff8844; top: 40px; left: 40px; animation-delay: 1.2s; }
+    .sect6 { background: #cccccc; bottom: 40px; right: 40px; animation-delay: 1.5s; }
+
+    /* 围攻动画 */
+    @keyframes attack {
+      0% {
+        transform: translate(0, 0) scale(0.9);
+        opacity: 0.6;
+      }
+      60% {
+        transform: translate(
+          calc(200px - 50%),
+          calc(200px - 50%)
+        ) scale(1.1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(0, 0) scale(0.9);
+        opacity: 0.6;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="peak"></div>
+
+    <div class="sect sect1"></div>
+    <div class="sect sect2"></div>
+    <div class="sect sect3"></div>
+    <div class="sect sect4"></div>
+    <div class="sect sect5"></div>
+    <div class="sect sect6"></div>
+  </div>
+</body>
+</html>
